@@ -1,0 +1,9 @@
+#include <stdio.h>  
+
+int main() {    
+    double x1 = 3, y1 = 7;  
+    double x2 = 8, y2 = 12;  
+    double slope = (y2 - y1) / (x2 - x1);  
+    printf("%.2f\n", slope);  
+    return 0;  
+}  

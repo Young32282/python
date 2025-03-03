@@ -1,0 +1,25 @@
+
+#include <stdio.h>  
+
+int main() {  
+    char input[100]; // 假设输入的字符串最大长度为99  
+    scanf("%s", input); // 读取字符串  
+    int count = vowels(input); // 调用函数计算元音字母个数  
+    printf("%d\n", count); // 输出结果  
+    return 0;  
+}  
+
+// 函数实现  
+int vowels(char* str) {  
+    int count = 0;  
+    char ch;  
+    
+    while ((ch = *str++) != '\0') { // 遍历字符串直到结束符  
+        ch = tolower(ch); // 将字符转换为小写字母  
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {  
+            count++; // 如果是元音字母，计数增加  
+        }  
+    }  
+    
+    return count; // 返回元音字母的个数  
+}

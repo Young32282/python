@@ -1,0 +1,35 @@
+#include <stdio.h>
+ 
+// 函数声明
+void split_time(long total_sec, int *hr, int *min, int *sec);
+ 
+int main() {
+    long total_sec;
+    int hr, min, sec;
+ 
+    // 读取输入
+    printf("请输入总秒数: ");
+    scanf("%ld", &total_sec);
+ 
+    // 调用函数进行转换
+    split_time(total_sec, &hr, &min, &sec);
+ 
+    // 输出结果
+    printf("%02d:%02d:%02d\n", hr, min, sec);
+ 
+    return 0;
+}
+ 
+// 函数定义
+void split_time(long total_sec, int *hr, int *min, int *sec) {
+    // 计算小时
+    *hr = total_sec / 3600;
+    total_sec %= 3600;
+ 
+    // 计算分钟
+    *min = total_sec / 60;
+    total_sec %= 60;
+ 
+    // 计算秒
+    *sec = total_sec;
+}

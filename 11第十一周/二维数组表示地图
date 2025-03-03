@@ -1,0 +1,69 @@
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <time.h>  
+
+#define SIZE 10  
+
+void travel(char map[SIZE][SIZE], int rand_seed);  
+
+int main() {  
+    // 初始化地图  
+    char map[SIZE][SIZE];  
+    for (int i = 0; i < SIZE; i++) {  
+        for (int j = 0; j < SIZE; j++) {  
+            map[i][j] = '.'; // 所有位置初始化为空  
+        }  
+    }  
+
+    // 固定随机数种子  
+    travel(map, 1024);  
+
+    // 输出地图  
+    for (int i = 0; i < SIZE; i++) {  
+        for (int j = 0; j < SIZE; j++) {  
+            printf("%c ", map[i][j]);  
+        }  
+        printf("\n");  
+    }  
+
+    return 0;  
+}  
+
+// travel 函数实现  
+void travel(char map[SIZE][SIZE], int rand_seed) {  
+    srand(rand_seed); // 设定随机数种子  
+
+    int row, col;  
+
+    // 随机选择起始位置  
+    row = rand() % SIZE;  
+    col = rand() % SIZE;  
+    
+    map[row][col] = 'A'; // 标记起始位置  
+
+    char current_marker = 'B'; // 用于标记后续的位置  
+
+    // 尝试移动  
+    while (current_marker <= 'Z') {  
+        int direction = rand() % 4; // 随机选择方向  
+        
+        int new_row = row;  
+        int new_col = col;  
+
+        switch (direction) {  
+            case 0: new_row--; break; // 上  
+            case 1: new_row++; break; // 下  
+            case 2: new_col--; break; // 左  
+            case 3: new_col++; break; // 右  
+        }  
+
+        // 边界检查和空位置检查  
+        if (new_row >= 0 && new_row < SIZE && new_col >= 0 && new_col < SIZE && map[new_row][new_col] == '.') {  
+            // 更新位置  
+            map[new_row][new_col] = current_marker; // 标记当前位置  
+            row = new_row; // 更新当前行  
+            col = new_col; // 更新当前列  
+            current_marker++; // 更新标记字符  
+        }  
+    }  
+}

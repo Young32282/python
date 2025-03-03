@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main (){
+    float a = 25 ; 
+    float b = 10;
+    float c = 6;
+    float d = a*b*c;
+    printf("%.2f",d);
+    return 0;
+
+}

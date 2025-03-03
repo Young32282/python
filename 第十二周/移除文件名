@@ -1,0 +1,28 @@
+#include <stdio.h>  
+#include <string.h>  
+
+void remove_filename(char* url) {  
+    // 查找最后一个斜杠  
+    char* last_slash = strrchr(url, '/');  
+   
+    // 如果找到了斜杠而且它不是第一个字符  
+    if (last_slash != NULL && last_slash != url) {  
+        *last_slash = '\0'; // 将最后一个斜杠替换为空字符  
+    }  
+}  
+
+int main() {  
+    char url[100]; // 用于存储输入的 URL  
+
+    // 接收用户输入  
+    printf("请输入 URL: ");  
+    fgets(url, sizeof(url), stdin);  
+
+    // 移除文件名  
+    remove_filename(url);  
+
+    // 输出结果  
+    printf("结果: %s\n", url);  
+
+    return 0;  
+}  

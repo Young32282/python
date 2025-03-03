@@ -1,0 +1,26 @@
+
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <time.h>  
+
+#define NUM_RANDOMS 1024   
+
+int main() {  
+    srand(1024);  
+    int suijishu[NUM_RANDOMS];  
+    for (int i = 0; i < NUM_RANDOMS; i++) {  
+        suijishu[i] = rand();  
+    }
+    for (int j=0;j<1024;j++){
+        for(int i=0;i<1023;i++){
+    if (suijishu[i]>suijishu[i+1]){
+        int temp=suijishu[i];
+        suijishu[i]=suijishu[i+1];
+        suijishu[i+1]=temp;
+    }
+   }
+    }
+    
+    printf("%d %d",suijishu[1023],suijishu[0]);
+    return 0;  
+}  

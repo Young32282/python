@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+double poly(float a, float b, float c, float x) {
+    double y = a * x * x + b * x + c;
+    return y;
+}
+
+int main() {
+    float a, b, c, x;
+    
+    scanf("%f %f %f %f", &a, &b, &c, &x);
+    printf("%.6f\n", poly(a, b, c, x));
+    
+    return 0;
+}

@@ -1,0 +1,34 @@
+#include <stdio.h>  
+
+struct point {  
+    int x, y;  
+};  
+
+struct rectangle {  
+    struct point upper_left;  
+    struct point lower_right;  
+};  
+
+struct point center(const struct rectangle *r) {  
+    struct point mid;  
+    mid.x = (r->upper_left.x + r->lower_right.x) / 2;  
+    mid.y = (r->upper_left.y + r->lower_right.y) / 2;  
+    return mid;  
+}  
+
+int main() {  
+    struct rectangle r;  
+    
+    // 输入矩形的左上坐标  
+    scanf("%d %d", &r.upper_left.x, &r.upper_left.y);  
+    
+    // 输入矩形的右下坐标  
+    scanf("%d %d", &r.lower_right.x, &r.lower_right.y);  
+    
+    struct point mid = center(&r);  
+    
+    // 输出矩形的中心坐标  
+    printf("(%d,%d)\n", mid.x, mid.y);  
+    
+    return 0;  
+}

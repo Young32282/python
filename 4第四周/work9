@@ -1,0 +1,38 @@
+#include <stdio.h>  
+  
+int main() {  
+    double data1, data2, result;  
+    char op;  
+    if (scanf("%lf %c %lf", &data1, &op, &data2) != 3) {  
+        printf("输入格式错误。\n");  
+        return 1;  
+    }  
+  
+    // 使用switch语句根据运算符执行相应的运算  
+    switch (op) {  
+        case '+':  
+            result = data1 + data2;  
+            break;  
+        case '-':  
+            result = data1 - data2;  
+            break;  
+        case '*':  
+            result = data1 * data2;  
+            break;  
+        case '/':  
+            if (data2 == 0.0) {  
+                printf("Error: Division by zero is not allowed.\n");  
+                return 1;  
+            }  
+            result = data1 / data2;  
+            break;  
+        default:  
+            printf("无效的运算符。\n");  
+            return 1;  
+    }  
+  
+
+    printf("%.2lf %c %.2lf = %.2lf\n", data1, op, data2, result);  
+  
+    return 0;  
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int i = 0; // 使用英文半角分号
+    while (i < 100) {
+        if (i % 7 == 0 || i % 10 == 7||i/10==7) { // 修正条件
+            printf("含7\n"); // 使用英文半角分号
+        } else {
+            printf("%d\n", i); // 使用英文半角分号
+        }
+        i++; // 确保每次循环结束时增加i的值
+    }
+    return 0;
+}

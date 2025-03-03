@@ -1,0 +1,41 @@
+#include <stdio.h>  
+
+// 定义点的结构体  
+struct point {  
+    int x;  
+    int y;  
+};  
+
+// 定义矩形的结构体  
+struct rectangle {  
+    struct point upper_left;   // 左上角点  
+    struct point lower_right;  // 右下角点  
+};  
+
+// 函数声明：计算矩形的面积  
+double area(const struct rectangle *r);  
+
+int main() {  
+    struct rectangle r;  
+
+    // 输入左上角和右下角的坐标  
+    printf("请输入矩形左上角坐标 (格式: x y): ");  
+    scanf("%d %d", &r.upper_left.x, &r.upper_left.y);  
+
+    printf("请输入矩形右下角坐标 (格式: x y): ");  
+    scanf("%d %d", &r.lower_right.x, &r.lower_right.y);  
+
+    // 计算并输出面积  
+    double rect_area = area(&r);  
+    printf("%.2lf\n", rect_area);  
+
+    return 0;  
+}  
+
+// 实现计算面积的函数  
+double area(const struct rectangle *r) {  
+    // 计算宽度和高度  
+    int width = r->lower_right.x - r->upper_left.x;  
+    int height = r->upper_left.y - r->lower_right.y; // 上边和下边的y坐标相减  
+    return (double)(width * height); // 返回面积  
+}
