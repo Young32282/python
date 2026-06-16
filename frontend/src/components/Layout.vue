@@ -121,7 +121,7 @@ function handleLogout() {
 
 .layout-sidebar {
   background: #f0f2f5;
-  transition: width var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -154,7 +154,11 @@ function handleLogout() {
   transform: scale(1.05);
 }
 
-.logo-text { overflow: hidden; white-space: nowrap; }
+.logo-text {
+  overflow: hidden;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
 .logo-title {
   display: block;
   color: var(--text);
@@ -177,6 +181,7 @@ function handleLogout() {
   padding: 8px 12px;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: padding 0.3s ease;
 }
 
 .sidebar-menu .el-menu-item {
@@ -185,7 +190,7 @@ function handleLogout() {
   margin: 0 0 8px 0;
   border-radius: 10px;
   background: #fff;
-  transition: all var(--transition);
+  transition: all 0.25s ease;
   font-weight: 500;
   letter-spacing: 0.3px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
@@ -220,6 +225,7 @@ function handleLogout() {
 
 .sidebar-footer {
   padding: 12px;
+  transition: padding 0.3s ease;
 }
 .collapse-btn {
   width: 100%;
@@ -231,7 +237,7 @@ function handleLogout() {
   cursor: pointer;
   border-radius: 10px;
   background: #fff;
-  transition: all var(--transition);
+  transition: all 0.25s ease;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 .collapse-btn:hover {
@@ -242,6 +248,7 @@ function handleLogout() {
 .main-container {
   background: var(--bg);
   overflow: hidden;
+  transition: margin-left 0.3s ease;
 }
 
 .layout-header {

@@ -12,7 +12,8 @@
       "Bash(curl *)",
       "Bash(npx tailwindcss *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git config *)"
     ]
   }
 }
