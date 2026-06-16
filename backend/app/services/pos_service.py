@@ -166,10 +166,17 @@ def create_order_logic(db: Session, order_data: dict, current_user):
 
     db.commit()
 
+    # 生成升级提示消息
+    upgrade_msg = None
+    if member_level_up and member:
+        level_names = {"normal": "普通", "silver": "银卡", "gold": "金卡", "diamond": "钻石"}
+        upgrade_msg = f"恭喜！会员已升级为{level_names.get(member.level, member.level)}会员"
+
     return {
         "order_no": order_no,
         "total_amount": total_amount,
         "discount_amount": discount_amount,
         "payment_amount": payment_amount,
         "member_level_up": member_level_up,
+        "upgrade_msg": upgrade_msg,
     }

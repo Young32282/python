@@ -184,7 +184,7 @@ import {
 } from '../api/pos'
 
 const userStore = useUserStore()
-const user = computed(() => userStore.userInfo || {})
+const user = computed(() => userStore.user || {})
 
 // 搜索相关
 const searchKeyword = ref('')

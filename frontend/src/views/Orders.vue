@@ -102,7 +102,7 @@ import { useUserStore } from '../stores/user'
 import { getOrders, voidOrder } from '../api/pos'
 
 const userStore = useUserStore()
-const user = computed(() => userStore.userInfo || userStore.user || {})
+const user = computed(() => userStore.user || {})
 
 // 是否有作废权限（manager / regional）
 const canVoid = computed(() => {

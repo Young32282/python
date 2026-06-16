@@ -13,7 +13,15 @@
       "Bash(npx tailwindcss *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Bash(python -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\(f'Total orders: {len\\(data\\)}'\\); print\\(f'Latest: {data[0][\\\\\"order_no\\\\\"] if data else \\\\\"none\\\\\"}'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :8000)",
+      "Bash(findstr LISTENING)",
+      "Bash(taskkill *)",
+      "Bash(powershell *)"
     ]
   }
 }

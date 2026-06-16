@@ -77,7 +77,7 @@ def get_orders(
     if current_user.store_id and current_user.store_id != 0:
         query = query.filter(Order.store_id == current_user.store_id)
 
-    orders = query.order_by(Order.created_at.desc()).limit(100).all()
+    orders = query.order_by(Order.id.desc()).limit(100).all()
 
     # 获取收银员姓名
     result = []
