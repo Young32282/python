@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "work3": "c",
+        "work5": "c",
+        "work2": "cpp",
+        "计算数组元素的平均值": "cpp",
+        "字符串替换": "cpp",
+        "从字符串中删除字母": "cpp",
+        "寻找数组中最大和第二大的元素": "cpp",
+        "初始化数组": "cpp",
+        "对矩阵元素进行求和": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

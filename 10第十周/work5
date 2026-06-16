@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+// 判断是否为闰年
+int is_leap_year(int year) {
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+// 分解日期
+void split_date(int day_of_year, int year, int *month, int *day) {
+    // 每个月的天数，对于闰年2月为29天
+    int days_in_month[] = {31, 28 + is_leap_year(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    
+    // 初始化月份和日期
+    *month = 1;
+    *day = day_of_year;
+
+    // 计算月份和日期
+    for (int i = 0; i < 12; ++i) {
+        if (*day > days_in_month[i]) {
+            *day -= days_in_month[i];
+            (*month)++;
+        } else {
+            break;
+        }
+    }
+}
+
+int main() {
+    int day_of_year, year, month, day;
+
+    // 读取输入
+    scanf("%d %d", &day_of_year, &year);
+
+    // 分解日期
+    split_date(day_of_year, year, &month, &day);
+
+    // 输出结果
+    printf("%d/%d\n", month, day);
+
+    return 0;
+}

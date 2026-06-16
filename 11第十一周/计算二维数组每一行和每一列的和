@@ -1,0 +1,48 @@
+#include <stdio.h>  
+
+// 函数原型  
+void display_row_column(int a[][5], int n);  
+
+int main() {  
+    int arr[3][5]; // 创建一个 3 行 5 列的二维数组  
+    int n = 3;  
+
+    // 输入三行数据  
+    for (int i = 0; i < n; i++) {  
+        for (int j = 0; j < 5; j++) {  
+            scanf("%d", &arr[i][j]);  
+        }  
+    }  
+
+    // 调用函数显示每行和每列的和  
+    display_row_column(arr, n);  
+
+    return 0;  
+}  
+
+// 函数实现  
+void display_row_column(int a[][5], int n) {  
+    int row_sum[n]; // 存储每一行的和  
+    int col_sum[5] = {0}; // 存储每一列的和，初始化为0  
+
+    // 计算每行和每列的和  
+    for (int i = 0; i < n; i++) {  
+        row_sum[i] = 0; // 初始化每一行的和  
+        for (int j = 0; j < 5; j++) {  
+            row_sum[i] += a[i][j]; // 计算行和  
+            col_sum[j] += a[i][j]; // 计算列和  
+        }  
+    }  
+
+    // 输出每行的和  
+    for (int i = 0; i < n; i++) {  
+        printf("%d ", row_sum[i]);  
+    }  
+    printf("\n"); // 换行  
+
+    // 输出每列的和  
+    for (int j = 0; j < 5; j++) {  
+        printf("%d ", col_sum[j]);  
+    }  
+    printf("\n"); // 换行  
+}

@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main(){
+    int month,day,year;
+    const  char *months[12] = {  
+        "January", "February", "March", "April",  
+        "May", "June", "July", "August",  
+        "September", "October", "November", "December"  
+    };  
+    scanf("%d/%d/%d",&month,&day,&year);
+    printf("%s %d,%d",months[month-1],day,year);
+}

@@ -1,0 +1,18 @@
+#include <stdio.h>
+int check(int x,int y, int n){
+    int z;
+    if (0<x&&x<n-1 && 0<y&&y<n-1){
+         z =1;
+     
+    }
+    else {
+        z=0;
+    }
+    return z;
+}
+int main(){
+    int x,y,n;
+    scanf("%d %d %d",&x,&y,&n);
+    printf("%d",check(x,y,n));
+    return 0;
+}

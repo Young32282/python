@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int nYears = 10; 
+    double mi = 1000.0; 
+    int nRates = 7; 
+    double rate = 6.0; 
+    double amount; 
+
+    for (int i = 0; i < nRates; i++) {
+        for (int year = 1; year <= nYears; year++) {
+            
+            amount = mi * pow(1 + rate / 100, year);
+           
+            printf("%d,%.2f%%,%.4f\n", year, rate, amount);
+        }
+        
+        rate += 1.0;
+    }
+
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include<stdio.h>
+void xiangjia(int x){
+    int num=0;
+    if(x==0){
+        return;
+    }
+    num+=x%10;
+    xiangjia(x/10);
+    return num;
+}
+int main(){
+    int x;
+    scanf("%d",&x);
+    printf("%d",xiangjia(x));
+    return 0;
+}
+#include <stdio.h>
+
+int sum_of_digits(int n) {
+    if (n == 0)
+        return 0;
+    else
+        return n % 10 + sum_of_digits(n / 10);
+}
+
+int main() {
+    int number;
+    scanf("%d", &number); // 读取输入的正整数
+    printf("%d\n", sum_of_digits(number)); // 输出每一位相加的和
+    return 0;
+}

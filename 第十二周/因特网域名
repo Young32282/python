@@ -1,0 +1,29 @@
+#include <stdio.h>  
+#include <string.h>  
+
+void build_index_url(const char* domain, char* index_url) {  
+    // 使用 strcpy 复制前缀到 index_url  
+    strcpy(index_url, "http://www.");  
+    
+    // 使用 strcat 连接域名到 index_url  
+    strcat(index_url, domain);  
+    
+    // 使用 strcat 连接后缀到 index_url  
+    strcat(index_url, "/index.html");  
+}  
+
+int main() {  
+    char domain[50];       // 用于存储域名  
+    char index_url[100];  // 用于存储构建的 URL，确保足够大  
+
+    // 接收用户输入的域名  
+    scanf("%s", domain);  
+    
+    // 调用函数构建完整的 URL  
+    build_index_url(domain, index_url);  
+    
+    // 输出结果  
+    printf("构建的索引 URL: %s\n", index_url);  
+    
+    return 0;  
+}  

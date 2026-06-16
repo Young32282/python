@@ -1,0 +1,12 @@
+#include<stdio.h>
+float main(){
+    float a=3.5;
+    float t=30;
+    float d=0.5*a*t*t;
+    printf ("%.3f",d);
+    return 0;
+
+
+
+
+}

@@ -1,0 +1,53 @@
+#include <stdio.h>  
+
+struct Date {  
+    int year;  
+    int month;  
+    int day;  
+};  
+
+// 函数声明  
+struct Date larger(struct Date d1, struct Date d2);  
+
+// 主函数  
+int main() {  
+    struct Date date1, date2;  
+
+    // 输入两个日期  
+    printf("请输入第一个日期 (格式: 年 月 日): ");  
+    scanf("%d %d %d", &date1.year, &date1.month, &date1.day);  
+    
+    printf("请输入第二个日期 (格式: 年 月 日): ");  
+    scanf("%d %d %d", &date2.year, &date2.month, &date2.day);  
+
+    // 获取较晚的日期  
+    struct Date laterDate = larger(date1, date2);  
+
+    // 输出格式化的日期  
+    printf("%04d-%02d-%02d\n", laterDate.year, laterDate.month, laterDate.day);  
+
+    return 0;  
+}  
+
+// 实现 larger 函数  
+struct Date larger(struct Date d1, struct Date d2) {  
+    if (d1.year > d2.year) {  
+        return d1;  
+    } else if (d1.year < d2.year) {  
+        return d2;  
+    } else {  
+        // 年份相同，比较月份  
+        if (d1.month > d2.month) {  
+            return d1;  
+        } else if (d1.month < d2.month) {  
+            return d2;  
+        } else {  
+            // 年月相同，比较日期  
+            if (d1.day > d2.day) {  
+                return d1;  
+            } else {  
+                return d2; // d1.day <= d2.day  
+            }  
+        }  
+    }  
+}
