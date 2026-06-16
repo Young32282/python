@@ -21,7 +21,13 @@
       "Bash(findstr :8000)",
       "Bash(findstr LISTENING)",
       "Bash(taskkill *)",
-      "Bash(powershell *)"
+      "Bash(powershell *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(winget install *)",
+      "Bash(C:/Program Files/GitHub CLI/gh.exe auth *)",
+      "Bash(git pull *)"
     ]
   }
 }

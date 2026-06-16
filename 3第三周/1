@@ -1,6 +1,0 @@
-#include <stdio.h>
-main(){
- int i =-17;
-
-printf("%d\n",i>=0 ? i : -i);
-}
